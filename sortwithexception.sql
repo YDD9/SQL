@@ -39,8 +39,8 @@ FROM nobel_win
 WHERE year=1970 
 ORDER BY
  CASE
-    WHEN subject IN ('Economics','Chemistry') THEN 1
-    ELSE 0
- END ASC,
+    WHEN subject IN ('Economics','Chemistry') THEN 1  --1 last line
+    ELSE 0  --0 first line
+ END,
  subject,
  winner;
