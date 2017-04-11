@@ -21,3 +21,16 @@ Sample table : item_mast
 
 SELECT AVG(pro_price) FROM item_mast   
   WHERE pro_com=16;  
+
+
+
+#  http://www.w3resource.com/sql-exercises/sql-retrieve-exercise-29.php
+
+/*
+Write a SQL query to display the average price of the items for each company, showing only the company code.
+
+Sample table : item_mast
+*/
+SELECT AVG(pro_price), pro_com  
+    FROM item_mast  
+GROUP BY pro_com; 
