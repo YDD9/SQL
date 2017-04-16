@@ -18,3 +18,34 @@ SELECT *
 FROM salesman  
 WHERE name LIKE 'N__l%';   
 
+
+# http://www.w3resource.com/sql-exercises/sql-wildcard-special-operator-exercise-12.php
+
+/*
+Write a SQL statement to find those rows from the table testtable which contain the escape character underscore ( _ ) in its column 'col1'.
+
+col1
+--------------------------
+A001/DJ-402\44_/100/2015
+A001_\DJ-402\44_/100/2015
+A001_DJ-402-2014-2015
+A002_DJ-401-2014-2015
+A001/DJ_401
+A001/DJ_402\44
+A001/DJ_402\44\2015
+A001/DJ-402%45\2015/200
+A001/DJ_402\45\2015%100
+A001/DJ_402%45\2015/300
+A001/DJ-402\44
+
+*/
+
+
+SELECT *  
+FROM testtable  
+WHERE coll LIKE '%/_%' ESCAPE '/';  
+
+# another solution without escape
+SELECT *  
+FROM testtable  
+WHERE coll LIKE '%[_]%';  
